@@ -25,8 +25,8 @@ boolean isBackLightOn = true;
 
 char cmdstr[CMDSTR_MAX_LEN];
 
-char ssid[48] = "";           // your network SSID (name) 
-char psw[48] = "";       // your network password
+char ssid[48] = "EdisonAP";           // your network SSID (name) 
+char psw[48] = "12345678";       // your network password
 boolean isSSIDreconfiged = false;
 int keyIndex = 0;                // your network key Index number (needed only for WEP)
 int status = WL_IDLE_STATUS;
@@ -596,14 +596,14 @@ void sendpage(){
           client.println("<title>Grove Indoor Environment Kit for Edison</title>"); 
           client.println("<font face=\"Microsoft YaHei\" color=\"#0071c5\"/>");
           client.println("<h1 align=\"center\">Grove Indoor Environment Kit for Edison</h1>");
-          client.print("<br /><br />");
+          client.print("<br />");
           for(int i=0; i < SENSOR_COUNT; i++){
             client.print("<h2 align=\"center\"><big>");
             client.print(SerialVarList1[i]);
             client.print(" = ");
             client.print(SensorValue[i]); 
             client.println("</big></h2>"); 
-            client.print("<br />");
+            //client.print("<br />");
           }      
           client.println("</html>");
            break;
