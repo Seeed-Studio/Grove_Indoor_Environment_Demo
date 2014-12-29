@@ -55,7 +55,8 @@ Buzzer | D4
 
 11.In the ¡°Send TextBox¡±, you can enter the following command to operate the sensors and actuators:
 set [sensor][condition:>, < or =][ threshold],[actuator]=[action]
-Example|Description
+
+Example | Description
 -------------------------- | -----------------------
 set temp>40, relay=1 | if temperature is higher than 40¡æ, the relay opens.
 set temp>40, sleep=1 | if temperature is >40¡æ, nothing to do.
