@@ -54,7 +54,7 @@ Buzzer | D4
 ![3](img/3.png)
 
 11.In the ¡°Send TextBox¡±, you can enter the following command to operate the sensors and actuators:
-set [sensor][condition:>, < or =][ threshold],[actuator]=[action]
+***Note:set [sensor][condition:>, < or =][ threshold],[actuator]=[action]
 
 Example | Description
 -------------------------- | -----------------------
