@@ -101,3 +101,4 @@ Instructions
 ![11](img/11.png)
 
 
+[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/Grove_Indoor_Environment_Demo)](https://github.com/igrigorik/ga-beacon)
