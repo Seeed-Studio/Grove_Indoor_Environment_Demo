@@ -20,6 +20,19 @@
 typedef void (*pActuatorHandler)(int);
 typedef int (*pgetSensorValue)(void);
 
+int getTempSensorValue();
+int getSoundSensorValue();
+int getHumiSensorValue();
+int getMoistrueSensorValue();
+int getLightSensorValue();
+int getUVSensorValue();
+int getPIRSensorValue();
+
+void RelayHandle(int val);
+void BuzzerHandle(int val);
+void ServoHandle(int val);
+void SleepHandle(int val);
+
 rgb_lcd lcd;
 boolean isBackLightOn = true;
 
