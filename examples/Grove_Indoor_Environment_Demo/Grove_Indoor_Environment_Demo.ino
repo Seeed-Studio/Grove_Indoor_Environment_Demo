@@ -23,7 +23,7 @@ typedef int (*pgetSensorValue)(void);
 int getTempSensorValue();
 int getSoundSensorValue();
 int getHumiSensorValue();
-int getMoistrueSensorValue();
+int getMoistureSensorValue();
 int getLightSensorValue();
 int getUVSensorValue();
 int getPIRSensorValue();
@@ -54,14 +54,14 @@ const int numCols = 16;
 const int MenuCount = 5;
 int MenuIndex = 0;
 
-const int MoistrueSensorIndex = 0;
+const int MoistureSensorIndex = 0;
 const int LightSensorIndex = 1;
 const int UVSensorIndex = 2;
 const int THSensorIndex = 3;
 const int LocalIPIndex = 4;
 
 const int pinSound = A0;
-const int pinMoistrue = A1;
+const int pinMoisture = A1;
 const int pinLight = A2;
 const int pinUV = A3;
 const int pinButton =0;
@@ -84,7 +84,7 @@ pgetSensorValue getSensorValueList[]={
   getLightSensorValue, 
   getUVSensorValue, 
   getPIRSensorValue, 
-  getMoistrueSensorValue
+  getMoistureSensorValue
 };
 
 int SensorValue[SENSOR_COUNT];
@@ -97,7 +97,7 @@ int SensorConfig[][4] = {       // value, condition, Actuator, action
   {200, '<', SERVO,  90},        //Light
   {1023,'>', SLEEP,  1},        //UV
   {2,   '=', BUZZER, 1},        //PIR
-  {600, '<', RELAY,  1}         //Moistrue
+  {600, '<', RELAY,  1}         //Moisture
 };
 
 void printSettings(void){
@@ -268,9 +268,9 @@ int getHumiSensorValue(){
   return humidity;
 }
 
-//get Grove-Moistrue Sensor value
-int getMoistrueSensorValue(){
-  return (SensorValue[MS] = analogRead(pinMoistrue));
+//get Grove-Moisture Sensor value
+int getMoistureSensorValue(){
+  return (SensorValue[MS] = analogRead(pinMoisture));
 }
 //get Grove-Light Sensor value
 int getLightSensorValue(){
@@ -306,12 +306,12 @@ void displayTHSensorValue(){
   lcd.print("->");
 }
 
-//display Grove-Moistrue Sensor value on LCD
-void displayMoistrueSensorValue(){
+//display Grove-Moisture Sensor value on LCD
+void displayMoistureSensorValue(){
   lcd.clear();
-  lcd.print("Moistrue Sensor ");
+  lcd.print("Moisture Sensor ");
   char number[16];
-  int len = sprintf(number,"%d",getMoistrueSensorValue());
+  int len = sprintf(number,"%d",getMoistureSensorValue());
   lcd.setCursor(0,1);
   lcd.print("<-");
   lcd.setCursor((numCols-len)/2,1);
@@ -446,8 +446,8 @@ void displayMenu(){
       case(THSensorIndex):
         displayTHSensorValue();
         break;     
-      case(MoistrueSensorIndex):
-        displayMoistrueSensorValue();
+      case(MoistureSensorIndex):
+        displayMoistureSensorValue();
         break;
       case(UVSensorIndex):
         displayUVSensorValue();
